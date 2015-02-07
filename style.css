@@ -1,0 +1,21 @@
+/**************************************************/
+/***************** general styles *****************/
+/**************************************************/
+body {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  color: #938F8D;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px; }
+
+.logo {
+  width: 63px; }
+
+.animation-container {
+  margin: 70px auto 100px; }
+
+/**************************************************/
+/*************** animation specific ***************/
+/**************************************************/
+/* Put here animation specific styles */
