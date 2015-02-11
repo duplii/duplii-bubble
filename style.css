@@ -22,3 +22,18 @@ body {
 /*************** animation specific ***************/
 /**************************************************/
 /* Put here animation specific styles */
+.bubble-animation {
+  height: 300px;
+  position: relative; }
+
+.bubble {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ff824c;
+  position: absolute;
+  bottom: 0;
+  -webkit-animation: bubble-move-3 3s linear infinite;
+          animation: bubble-move-3 3s linear infinite; }
+

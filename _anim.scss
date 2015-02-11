@@ -1,2 +1,26 @@
 /* Put here animation specific styles */
 
+.bubble-animation {
+	height: 300px;
+	position: relative;
+}
+
+.bubble {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: lighten($orange, 10%);
+	position: absolute;
+	bottom: 0;
+	animation: bubble-move-3 3s linear infinite;
+}
+
+// .bubble--light {
+// 	background-color: lighten($orange, 30%);
+// }
+//
+// .bubble--lighter {
+// 	background-color: lighten($orange, 40%);
+// }
+
