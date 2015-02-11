@@ -38,11 +38,11 @@
 			// This is the sway factor. By multiplying it by -1 on each loop execution we are able to sway the bubble from left to right.
 			$sway: $sway * -1;
 			@if $steps-length - $i >= 2 { // The bubble is just moving up
-				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px); }
+				#{$this-step}% { transform: translate(#{$sway}px, -#{$distance}); }
 			} @else if $steps-length - $i == 1{ // We're in the second-to-last keyframe, let's start bursting the bubble
-				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px); opacity: 1; }
+				#{$this-step}% { transform: translate(#{$sway}px, -#{$distance}); opacity: 1; }
 			} @else { // Last keyframe: burst the thing!
-				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px) scale(2.5); opacity: 0; }
+				#{$this-step}% { transform: translate(#{$sway}px, -#{$distance}) scale(2.5); opacity: 0; }
 			}
 		}
 	}
