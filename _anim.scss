@@ -16,14 +16,6 @@
 	animation: bubble-move-3 3s linear infinite;
 }
 
-// .bubble--light {
-// 	background-color: lighten($orange, 30%);
-// }
-//
-// .bubble--lighter {
-// 	background-color: lighten($orange, 40%);
-// }
-
 @function calculate-distance($anim-step, $length){
 	// We need to calculate the exact distance a bubble should be at every given keyframe
 	// $anim-step : 100 = x : $length
