@@ -10,7 +10,7 @@
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
-	background-color: lighten($orange, 10%);
+	background-color: rgba(lighten($orange, 10%), .8);
 	position: absolute;
 	bottom: 0;
 	animation: bubble-move-3 3s linear infinite;
