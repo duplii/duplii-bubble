@@ -13,7 +13,6 @@
 	background-color: rgba(lighten($orange, 10%), .8);
 	position: absolute;
 	bottom: 0;
-	animation: bubble-move-3 3s linear infinite;
 }
 
 @function calculate-distance($anim-step, $length){
@@ -50,25 +49,32 @@
 
 // Config the animations here
 $config1: (
-	name: 'bubble-move-1',
-	length: 250px,
-	steps: 0 25 50 75 94 100,
-	sway: 5
-	);
-$config2: (
-	name: 'bubble-move-2',
-	length: 180px,
-	steps: 0 25 50 75 94 100,
-	sway: 6
-	);
-$config3: (
-	name: 'bubble-move-3',
+	name: 'bubble-burst-1',
 	length: 100px,
 	steps: 0 25 50 75 94 100,
 	sway: 2
+	);
+$config2: (
+	name: 'bubble-burst-2',
+	length: 180px,
+	steps: 0 25 50 75 94 100,
+	sway: -3
+	);
+$config3: (
+	name: 'bubble-burst-3',
+	length: 250px,
+	steps: 0 25 50 75 94 100,
+	sway: 4
 	);
 
 // Generate keyframes using config maps above! Woooo!
 @include generate-keyframe( $config1 );
 @include generate-keyframe( $config2 );
 @include generate-keyframe( $config3 );
+
+// Generate animation classes we'll be assigning at runtime.
+@for $i from 1 through 3 {
+	.bubble-burst-#{$i} {
+		animation: bubble-burst-#{$i} #{$i + .7}s linear infinite;
+	}
+}
