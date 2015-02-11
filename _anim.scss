@@ -24,3 +24,59 @@
 // 	background-color: lighten($orange, 40%);
 // }
 
+@function calculate-distance($anim-step, $length){
+	// We need to calculate the exact distance a bubble should be at every given keyframe
+	// $anim-step : 100 = x : $length
+	@return $anim-step * $length / 100;
+}
+
+@mixin generate-keyframe( $config-map ) {
+	// Get configuration variables
+	$anim-name:  map-get($config-map, 'name');
+	$length: map-get($config-map, 'length');
+	$steps: map-get($config-map, 'steps');
+	$sway: map-get($config-map, 'sway');
+	// Create the keyframes
+	@keyframes $anim-name {
+		$steps-length: length($steps);
+		// Loop through all steps and get them. We need them in order to calculate the correct translateY distance.
+		@for $i from 1 through $steps-length {
+			$this-step: nth($steps, $i);
+			$distance: calculate-distance($this-step, $length);
+			// This is the sway factor. By multiplying it by -1 on each loop execution we are able to sway the bubble from left to right.
+			$sway: $sway * -1;
+			@if $steps-length - $i >= 2 { // The bubble is just moving up
+				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px); }
+			} @else if $steps-length - $i == 1{ // We're in the second-to-last keyframe, let's start bursting the bubble
+				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px); opacity: 1; }
+			} @else { // Last keyframe: burst the thing!
+				#{$this-step}% { transform: translateY(-#{$distance}) translateX(#{$sway}px) scale(2.5); opacity: 0; }
+			}
+		}
+	}
+}
+
+// Config the animations here
+$config1: (
+	name: 'bubble-move-1',
+	length: 250px,
+	steps: 0 25 50 75 94 100,
+	sway: 5
+	);
+$config2: (
+	name: 'bubble-move-2',
+	length: 180px,
+	steps: 0 25 50 75 94 100,
+	sway: 6
+	);
+$config3: (
+	name: 'bubble-move-3',
+	length: 100px,
+	steps: 0 25 50 75 94 100,
+	sway: 2
+	);
+
+// Generate keyframes using config maps above! Woooo!
+@include generate-keyframe( $config1 );
+@include generate-keyframe( $config2 );
+@include generate-keyframe( $config3 );
