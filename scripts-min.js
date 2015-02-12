@@ -22,7 +22,8 @@ window.addEventListener('load', function() {
 			'bottom:'+ posBottom +'%;' +
 			'left:'+ posLeft +'%;' +
 			'background-color:rgba('+ color +');' +
-			'-webkit-animation-delay:'+ animDelay +'ms;';
+			'-webkit-animation-delay:'+ animDelay +'ms;' +
+			'animation-delay:'+ animDelay +'ms;';
 		// Decide what animation to apply.
 		animationId = getRandomInt(1,3);
 		// Create the thing.
