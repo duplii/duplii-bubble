@@ -12,6 +12,10 @@ body {
   margin: 0 auto;
   padding: 20px; }
 
+a {
+  color: #FF5F19;
+  text-decoration: none; }
+
 .logo {
   width: 63px; }
 
