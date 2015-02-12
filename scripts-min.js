@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 		color = '255, 130, 76, ' + alphaChannel;
 		// Define the position bottom and left.
 		posLeft = getRandomInt(0, 100);
-		posBottom = getRandomInt(0, 50);
+		posBottom = getRandomInt(-25, 50);
 		// Define an optional animation delay.
 		animDelay = getRandomInt(0, 3) * 100;
 		// Create the css string to be added to the element.
