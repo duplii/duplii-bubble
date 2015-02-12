@@ -47,22 +47,22 @@
 	}
 }
 
-// This list contains the configuration maps that will be used to generate the keyframes.
+// This list contains the configuration maps that will be used to generate the keyframes. Beware: Quotes should not surround names otherwise Sass will output them in the css file and Firefox does not read animation names with quotes. It looks a little crazy looking at the maps there with string not surrounded by quotes, but it looks like Sass is handling this stuff pretty neatly, so.
 $configs: (
 	(
-		name: 'bubble-burst-1',
+		name: bubble-burst-1,
 		length: 100px,
 		steps: 0 25 50 75 94 100,
 		sway: 2
 	),
 	(
-		name: 'bubble-burst-2',
+		name: bubble-burst-2,
 		length: 180px,
 		steps: 0 25 50 75 94 100,
 		sway: -3
 	),
 	(
-		name: 'bubble-burst-3',
+		name: bubble-burst-3,
 		length: 250px,
 		steps: 0 25 50 75 94 100,
 		sway: 4
