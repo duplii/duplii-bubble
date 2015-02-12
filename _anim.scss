@@ -75,6 +75,7 @@ $config3: (
 // Generate animation classes we'll be assigning at runtime.
 @for $i from 1 through 3 {
 	.bubble-burst-#{$i} {
-		animation: bubble-burst-#{$i} #{$i + .7}s linear infinite;
+		animation: bubble-burst-#{$i} #{$i + .2}s linear;
+		animation-fill-mode: both;
 	}
 }
