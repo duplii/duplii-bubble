@@ -92,6 +92,12 @@ body {
             transform: translate(2px, -100px) scale(2.5);
     opacity: 0; } }
 
+.bubble-burst-1 {
+  -webkit-animation: bubble-burst-1 1.2s linear;
+          animation: bubble-burst-1 1.2s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
 @-webkit-keyframes 'bubble-burst-2' {
   0% {
     -webkit-transform: translate(3px, -0px) scale(.7);
@@ -149,6 +155,12 @@ body {
             transform: translate(-3px, -180px) scale(2.5);
     opacity: 0; } }
 
+.bubble-burst-2 {
+  -webkit-animation: bubble-burst-2 2.2s linear;
+          animation: bubble-burst-2 2.2s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
 @-webkit-keyframes 'bubble-burst-3' {
   0% {
     -webkit-transform: translate(-4px, -0px) scale(.7);
@@ -205,18 +217,6 @@ body {
     -webkit-transform: translate(4px, -250px) scale(2.5);
             transform: translate(4px, -250px) scale(2.5);
     opacity: 0; } }
-
-.bubble-burst-1 {
-  -webkit-animation: bubble-burst-1 1.2s linear;
-          animation: bubble-burst-1 1.2s linear;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.bubble-burst-2 {
-  -webkit-animation: bubble-burst-2 2.2s linear;
-          animation: bubble-burst-2 2.2s linear;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
 
 .bubble-burst-3 {
   -webkit-animation: bubble-burst-3 3.2s linear;

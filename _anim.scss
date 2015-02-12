@@ -47,33 +47,31 @@
 	}
 }
 
-// Config the animations here
-$config1: (
-	name: 'bubble-burst-1',
-	length: 100px,
-	steps: 0 25 50 75 94 100,
-	sway: 2
-	);
-$config2: (
-	name: 'bubble-burst-2',
-	length: 180px,
-	steps: 0 25 50 75 94 100,
-	sway: -3
-	);
-$config3: (
-	name: 'bubble-burst-3',
-	length: 250px,
-	steps: 0 25 50 75 94 100,
-	sway: 4
-	);
+// This list contains the configuration maps that will be used to generate the keyframes.
+$configs: (
+	(
+		name: 'bubble-burst-1',
+		length: 100px,
+		steps: 0 25 50 75 94 100,
+		sway: 2
+	),
+	(
+		name: 'bubble-burst-2',
+		length: 180px,
+		steps: 0 25 50 75 94 100,
+		sway: -3
+	),
+	(
+		name: 'bubble-burst-3',
+		length: 250px,
+		steps: 0 25 50 75 94 100,
+		sway: 4
+	)
+);
 
-// Generate keyframes using config maps above! Woooo!
-@include generate-keyframe( $config1 );
-@include generate-keyframe( $config2 );
-@include generate-keyframe( $config3 );
-
-// Generate animation classes we'll be assigning at runtime.
-@for $i from 1 through 3 {
+// Loop through the configuration list and generate appropriate keyframes and classes.
+@for $i from 1 through length($configs) {
+	@include generate-keyframe( nth($configs, $i) );
 	.bubble-burst-#{$i} {
 		animation: bubble-burst-#{$i} #{$i + .2}s linear;
 		animation-fill-mode: both;
