@@ -67,6 +67,10 @@ function celebrate(place, quantity) {
 	}
 }
 
+function stopCelebration() {
+	window.stopCelebrating = true;
+}
+
 window.addEventListener('load', function() {
 	
 	// Set a place where we want this thing to fire.
