@@ -1,6 +1,11 @@
 /***************** Bubble animations *****************/
 
 function makeBubble( where ){
+	// This initial condition gives us a bailout if we ever want to stop the celebration. Setting it to true will stop it. I'm not sure about the current implementation, though.
+	if ( celebrate.stopCelebrating ) {
+		return;
+	}
+	
 	// Helper function to get random numbers.
 	function getRandomInt(min, max) {
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -48,27 +53,24 @@ function makeBubble( where ){
 		return animDuration + animDelay;
 	}
 	
-	// This condition gives us a bailout if we ever want to stop the celebration. Setting it to true will stop it. I'm not happy with the current implementation because it pollutes the global scope, but that's it for now.
-	if ( !window.stopCelebrating ) {
-		// We then wait for the animation to end, and then we remove the element and fire the main function all over again.
-		setTimeout(function () {
-			newBubble.parentNode.removeChild(newBubble);
-			makeBubble(where);
-		}, getAnimationDuration(newBubble));
-	}
+	// We then wait for the animation to end, and then we remove the element and fire the main function all over again.
+	setTimeout(function () {
+		newBubble.parentNode.removeChild(newBubble);
+		makeBubble(where);
+	}, getAnimationDuration(newBubble));
 }
 
 // This is the function that will actually fire the bubbles. It accepts a DOMNode where the bubbles should appear and the quantity of bubbles to create.
 function celebrate(place, quantity) {
 	// We make sure that stopCelebrating is set to false.
-	window.stopCelebrating = false;
+	celebrate.stopCelebrating = false;
 	for (var i = 0; i < quantity; i++) {
 		makeBubble(place);
 	}
 }
 
 function stopCelebration() {
-	window.stopCelebrating = true;
+	celebrate.stopCelebrating = true;
 }
 
 window.addEventListener('load', function() {
