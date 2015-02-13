@@ -16,7 +16,7 @@ function makeBubble( where ){
 	diameter = getRandomInt(10, 25);
 	// Define the color. First we get the alpha channel and then create the rgba value. Rgba is used instead of solid colors so that we can create a nice overlapping effect without touching opacity. Opacity is in fact used in the animation for bursting the bubble.
 	alphaChannel = getRandomInt(3, 8) / 10;
-	color = '255, 130, 76, ' + alphaChannel;
+	color = celebrate.rgbColor + ', ' + alphaChannel;
 	// Define the position bottom and left.
 	posLeft = getRandomInt(0, 100);
 	posBottom = getRandomInt(-25, 50);
@@ -61,7 +61,9 @@ function makeBubble( where ){
 }
 
 // This is the function that will actually fire the bubbles. It accepts a DOMNode where the bubbles should appear and the quantity of bubbles to create.
-function celebrate(place, quantity) {
+function celebrate( place, quantity, rgbColor ) {
+	// We set the color variable default, if none is specified.
+	celebrate.rgbColor = rgbColor || '255, 130, 76';
 	// We make sure that stopCelebrating is set to false.
 	celebrate.stopCelebrating = false;
 	for (var i = 0; i < quantity; i++) {
