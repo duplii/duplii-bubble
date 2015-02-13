@@ -54,21 +54,21 @@ $white: #FFFFFF;
 $configs: (
 	(
 		name: bubble-burst-1,
-		length: 100px,
+		length: 70px,
 		steps: 0 25 50 75 94 100,
-		sway: 2
+		sway: 1
 	),
 	(
 		name: bubble-burst-2,
-		length: 180px,
+		length: 120px,
 		steps: 0 25 50 75 94 100,
-		sway: -3
+		sway: -2
 	),
 	(
 		name: bubble-burst-3,
-		length: 250px,
+		length: 180px,
 		steps: 0 25 50 75 94 100,
-		sway: 4
+		sway: 3
 	)
 );
 
@@ -76,7 +76,7 @@ $configs: (
 @for $i from 1 through length($configs) {
 	@include generate-keyframe( nth($configs, $i) );
 	.bubble-burst-#{$i} {
-		animation: bubble-burst-#{$i} #{$i + .2}s linear;
+		animation: bubble-burst-#{$i} #{$i - .3}s linear;
 		animation-fill-mode: both;
 	}
 }
