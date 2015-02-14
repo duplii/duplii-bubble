@@ -1,6 +1,6 @@
 /***************** Bubble animations *****************/
 
-function makeBubble( where, rgbColor ){
+function makeBubble( where, rgbColor, align ){
 	// This initial condition gives us a bailout if we ever want to stop the celebration. Setting it to true will stop it. I'm not sure about the current implementation, though.
 	if ( celebrate.stopCelebrating ) {
 		return;
@@ -11,14 +11,14 @@ function makeBubble( where, rgbColor ){
 	    return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 	// Define all variables.
-	var newBubble, diameter, alphaChannel, color, cssString, animationId, posLeft, posBottom, animDelay;
+	var newBubble, diameter, alphaChannel, color, cssString, animationId, posX, posBottom, animDelay;
 	// Define the diameter of the bubble.
 	diameter = getRandomInt(10, 25);
 	// Define the color. First we get the alpha channel and then create the rgba value. Rgba is used instead of solid colors so that we can create a nice overlapping effect without touching opacity. Opacity is in fact used in the animation for bursting the bubble.
 	alphaChannel = getRandomInt(3, 8) / 10;
 	color = rgbColor + ', ' + alphaChannel;
 	// Define the position bottom and left.
-	posLeft = getRandomInt(0, 100);
+	posX = getRandomInt(0, 100);
 	posBottom = getRandomInt(-25, 50);
 	// Define an optional animation delay.
 	animDelay = getRandomInt(0, 3) * 100;
@@ -26,7 +26,7 @@ function makeBubble( where, rgbColor ){
 	cssString = 'width:'+ diameter +'px;' +
 		'height:'+ diameter +'px;' +
 		'bottom:'+ posBottom +'%;' +
-		'left:'+ posLeft +'%;' +
+		align +':'+ posX +'%;' +
 		'background-color:rgba('+ color +');' +
 		'-webkit-animation-delay:'+ animDelay +'ms;' +
 		'animation-delay:'+ animDelay +'ms;';
@@ -56,7 +56,7 @@ function makeBubble( where, rgbColor ){
 	// We then wait for the animation to end, and then we remove the element and fire the main function all over again.
 	setTimeout(function () {
 		newBubble.parentNode.removeChild(newBubble);
-		makeBubble(where, rgbColor);
+		makeBubble(where, rgbColor, align);
 	}, getAnimationDuration(newBubble));
 }
 
@@ -68,11 +68,13 @@ function celebrate() {
 		var rgbColor = place.getAttribute('data-bubble-rgbcolor') || '255, 130, 76';
 		// We get the quantity from data attribute, ortherwise we'll set a default.
 		var quantity = place.getAttribute('data-bubble-quantity') || 5;
+		// Get optional alignment parameter from data-bubble-align. Possible options are left/right.
+		var align = place.getAttribute('data-bubble-align') || 'left';
 		// We make sure that stopCelebrating is set to false.
 		celebrate.stopCelebrating = false;
 		
 		for (var i = 0; i < quantity; i++) {
-			makeBubble(place, rgbColor);
+			makeBubble(place, rgbColor, align);
 		}
 	});
 	
