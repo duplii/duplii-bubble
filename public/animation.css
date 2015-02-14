@@ -1,0 +1,202 @@
+/* Put here animation specific styles */
+.bubble-animation {
+  height: 300px;
+  position: relative; }
+
+.bubble {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(255, 130, 76, 0.8);
+  position: absolute;
+  bottom: 0; }
+
+@-webkit-keyframes bubble-burst-1 {
+  0% {
+    -webkit-transform: translate(-1px, -0px) scale(.7);
+            transform: translate(-1px, -0px) scale(.7);
+    opacity: 0; }
+  25% {
+    -webkit-transform: translate(1px, -17.5px) scale(1);
+            transform: translate(1px, -17.5px) scale(1);
+    opacity: 1; }
+  50% {
+    -webkit-transform: translate(-1px, -35px) scale(1);
+            transform: translate(-1px, -35px) scale(1);
+    opacity: 1; }
+  75% {
+    -webkit-transform: translate(1px, -52.5px) scale(1);
+            transform: translate(1px, -52.5px) scale(1);
+    opacity: 1; }
+  94% {
+    -webkit-transform: translate(-1px, -65.8px) scale(1);
+            transform: translate(-1px, -65.8px) scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(1px, -70px) scale(2.5);
+            transform: translate(1px, -70px) scale(2.5);
+    opacity: 0; } }
+
+@keyframes bubble-burst-1 {
+  0% {
+    -webkit-transform: translate(-1px, -0px) scale(.7);
+            transform: translate(-1px, -0px) scale(.7);
+    opacity: 0; }
+
+  25% {
+    -webkit-transform: translate(1px, -17.5px) scale(1);
+            transform: translate(1px, -17.5px) scale(1);
+    opacity: 1; }
+
+  50% {
+    -webkit-transform: translate(-1px, -35px) scale(1);
+            transform: translate(-1px, -35px) scale(1);
+    opacity: 1; }
+
+  75% {
+    -webkit-transform: translate(1px, -52.5px) scale(1);
+            transform: translate(1px, -52.5px) scale(1);
+    opacity: 1; }
+
+  94% {
+    -webkit-transform: translate(-1px, -65.8px) scale(1);
+            transform: translate(-1px, -65.8px) scale(1);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translate(1px, -70px) scale(2.5);
+            transform: translate(1px, -70px) scale(2.5);
+    opacity: 0; } }
+
+.bubble-burst-1 {
+  -webkit-animation: bubble-burst-1 0.7s linear;
+          animation: bubble-burst-1 0.7s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+@-webkit-keyframes bubble-burst-2 {
+  0% {
+    -webkit-transform: translate(2px, -0px) scale(.7);
+            transform: translate(2px, -0px) scale(.7);
+    opacity: 0; }
+  25% {
+    -webkit-transform: translate(-2px, -30px) scale(1);
+            transform: translate(-2px, -30px) scale(1);
+    opacity: 1; }
+  50% {
+    -webkit-transform: translate(2px, -60px) scale(1);
+            transform: translate(2px, -60px) scale(1);
+    opacity: 1; }
+  75% {
+    -webkit-transform: translate(-2px, -90px) scale(1);
+            transform: translate(-2px, -90px) scale(1);
+    opacity: 1; }
+  94% {
+    -webkit-transform: translate(2px, -112.8px) scale(1);
+            transform: translate(2px, -112.8px) scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(-2px, -120px) scale(2.5);
+            transform: translate(-2px, -120px) scale(2.5);
+    opacity: 0; } }
+
+@keyframes bubble-burst-2 {
+  0% {
+    -webkit-transform: translate(2px, -0px) scale(.7);
+            transform: translate(2px, -0px) scale(.7);
+    opacity: 0; }
+
+  25% {
+    -webkit-transform: translate(-2px, -30px) scale(1);
+            transform: translate(-2px, -30px) scale(1);
+    opacity: 1; }
+
+  50% {
+    -webkit-transform: translate(2px, -60px) scale(1);
+            transform: translate(2px, -60px) scale(1);
+    opacity: 1; }
+
+  75% {
+    -webkit-transform: translate(-2px, -90px) scale(1);
+            transform: translate(-2px, -90px) scale(1);
+    opacity: 1; }
+
+  94% {
+    -webkit-transform: translate(2px, -112.8px) scale(1);
+            transform: translate(2px, -112.8px) scale(1);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translate(-2px, -120px) scale(2.5);
+            transform: translate(-2px, -120px) scale(2.5);
+    opacity: 0; } }
+
+.bubble-burst-2 {
+  -webkit-animation: bubble-burst-2 1.7s linear;
+          animation: bubble-burst-2 1.7s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+@-webkit-keyframes bubble-burst-3 {
+  0% {
+    -webkit-transform: translate(-3px, -0px) scale(.7);
+            transform: translate(-3px, -0px) scale(.7);
+    opacity: 0; }
+  25% {
+    -webkit-transform: translate(3px, -45px) scale(1);
+            transform: translate(3px, -45px) scale(1);
+    opacity: 1; }
+  50% {
+    -webkit-transform: translate(-3px, -90px) scale(1);
+            transform: translate(-3px, -90px) scale(1);
+    opacity: 1; }
+  75% {
+    -webkit-transform: translate(3px, -135px) scale(1);
+            transform: translate(3px, -135px) scale(1);
+    opacity: 1; }
+  94% {
+    -webkit-transform: translate(-3px, -169.2px) scale(1);
+            transform: translate(-3px, -169.2px) scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(3px, -180px) scale(2.5);
+            transform: translate(3px, -180px) scale(2.5);
+    opacity: 0; } }
+
+@keyframes bubble-burst-3 {
+  0% {
+    -webkit-transform: translate(-3px, -0px) scale(.7);
+            transform: translate(-3px, -0px) scale(.7);
+    opacity: 0; }
+
+  25% {
+    -webkit-transform: translate(3px, -45px) scale(1);
+            transform: translate(3px, -45px) scale(1);
+    opacity: 1; }
+
+  50% {
+    -webkit-transform: translate(-3px, -90px) scale(1);
+            transform: translate(-3px, -90px) scale(1);
+    opacity: 1; }
+
+  75% {
+    -webkit-transform: translate(3px, -135px) scale(1);
+            transform: translate(3px, -135px) scale(1);
+    opacity: 1; }
+
+  94% {
+    -webkit-transform: translate(-3px, -169.2px) scale(1);
+            transform: translate(-3px, -169.2px) scale(1);
+    opacity: 1; }
+
+  100% {
+    -webkit-transform: translate(3px, -180px) scale(2.5);
+            transform: translate(3px, -180px) scale(2.5);
+    opacity: 0; } }
+
+.bubble-burst-3 {
+  -webkit-animation: bubble-burst-3 2.7s linear;
+          animation: bubble-burst-3 2.7s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }

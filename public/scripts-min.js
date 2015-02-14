@@ -84,3 +84,4 @@ window.addEventListener('load', function() {
 	celebrate(place, 10);
 	
 });
+
