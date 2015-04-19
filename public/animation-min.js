@@ -62,6 +62,8 @@ function makeBubble( where, rgbColor, align ){
 
 // This is the function that will actually fire the bubbles. Bubbles will be created in each .bubble-container element and will be optionally configurable with data-bubble-rgbcolor and data-bubble-quantity. Very flexible.
 function celebrate() {
+	// We make sure that stopCelebrating is set to false.
+	celebrate.stopCelebrating = false;
 	var places = document.querySelectorAll('.bubble-container');
 	Array.prototype.forEach.call(places, function(place) {
 		// We set the color variable default, if none is specified.
@@ -70,14 +72,10 @@ function celebrate() {
 		var quantity = place.getAttribute('data-bubble-quantity') || 5;
 		// Get optional alignment parameter from data-bubble-align. Possible options are left/right.
 		var align = place.getAttribute('data-bubble-align') || 'left';
-		// We make sure that stopCelebrating is set to false.
-		celebrate.stopCelebrating = false;
-		
 		for (var i = 0; i < quantity; i++) {
 			makeBubble(place, rgbColor, align);
 		}
 	});
-	
 }
 
 function stopCelebration() {
